@@ -9,10 +9,13 @@ juso.go.kr API를 이용하기 때문에 API key를 발급 받아야 한다. 다
 https://business.juso.go.kr/addrlink/openApi/apiReqst.do
 
 발급 받은 키는 [https://github.com/theskumar/python-dotenv](python-dotenv)를 통해서 지정할 수도 있고, 수동으로 지정할 수도 있다.
+
+`.env` 파일 사용하기
 ```shell
 JUSO_GO_KR_API_KEY=xxxx
 ```
 
+직접 지정하기
 ```python
 from addresskr.jusogokr import settings
 settings.JUSO_GO_KR_API_KEY = 'xxxx'
