@@ -4,9 +4,13 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "addresskr"
+readme = "README.md"
 authors = [{name = "Pak Youngrok", email = "youngrok@finecode.kr"}]
 license = {file = "LICENSE"}
-classifiers = ["License :: OSI Approved :: Apache Software License"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: Apache Software License"
+]
 dynamic = ["version", "description"]
 dependencies = [
     "requests",
@@ -17,3 +21,4 @@ dependencies = [
 
 [project.urls]
 Home = "https://github.com/finecodekr/addresskr"
+Documentation = "https://github.com/finecodekr/addresskr"

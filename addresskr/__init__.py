@@ -1,5 +1,5 @@
 """
-주소 문자열을 받아서 도로명주소의 여러 가지 요소로 쪼개서 사용할 수 있게 한다.
+Parse Korean address text into various address fields based on juso.go.kr API
 """
 __version__ = '0.1.0'
 
