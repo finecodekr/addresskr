@@ -1,7 +1,7 @@
 """
 Parse Korean address text into various address fields based on juso.go.kr API
 """
-__version__ = '0.1.3'
+__version__ = '0.1.4'
 
 import csv
 import os

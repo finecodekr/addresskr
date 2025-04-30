@@ -16,6 +16,10 @@ settings = Settings(JUSO_GO_KR_API_KEY=os.getenv('JUSO_GO_KR_API_KEY'))
 
 def search(keyword: str):
     if settings.JUSO_GO_KR_API_KEY is None:
+        load_dotenv()
+        settings.JUSO_GO_KR_API_KEY = os.getenv('JUSO_GO_KR_API_KEY')
+
+    if settings.JUSO_GO_KR_API_KEY is None:
         raise ValueError('juso.go.kr의 API key가 설정되지 않았습니다. dotenv를 통해서 JUSO_GO_KR_API_KEY를 설정하거나, '
                          'addresskr.jusogokr.settings.JUSO_GO_KR_API_KEY에 직접 설정하세요.')
 
