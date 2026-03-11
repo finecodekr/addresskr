@@ -1,7 +1,7 @@
 """
 Parse Korean address text into various address fields based on juso.go.kr API
 """
-__version__ = '0.1.5'
+__version__ = '0.1.6'
 
 import csv
 import os
@@ -59,7 +59,8 @@ class 도로명주소:
             row = next(filter(lambda row: row[1] == 법정동주소, 법정동코드표))
             self.법정동코드 = row[0]
         except:
-            raise ValueError(f'법정동코드를 찾을 수 없습니다. {법정동주소}')
+            # raise ValueError(f'법정동코드를 찾을 수 없습니다. {법정동주소}')
+            pass
 
         if self.산여부 == '1':
             self.특수지코드 = '1'

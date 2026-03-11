@@ -19,3 +19,5 @@ class TestAddressParser(unittest.TestCase):
         self.assertEqual('삼평동', address.읍면동명)
         self.assertEqual('4113510900', address.법정동코드)
         self.assertEqual('912-비54호', address.상세주소)
+
+        address = 도로명주소.parse('경기도 화성시 동탄구 여울동')
