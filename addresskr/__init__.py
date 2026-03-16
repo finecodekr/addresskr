@@ -1,7 +1,7 @@
 """
 Parse Korean address text into various address fields based on juso.go.kr API
 """
-__version__ = '0.1.6'
+__version__ = '0.1.7'
 
 import csv
 import os
@@ -14,9 +14,10 @@ from addresskr import jusogokr
 """
 법정동코드표는 다음 주소에서 다운로드 받은 것이다.
 https://www.code.go.kr/stdcode/regCodeL.do
+KIKcd_B.20260301.xlsx를 csv로 변환한 파일을 사용한다.
 """
-with open(os.path.dirname(__file__) + '/법정동코드 전체자료.txt', encoding='euckr') as f:
-    법정동코드표 = [[col for col in row] for row in csv.reader(f, delimiter='\t')]
+with open(os.path.dirname(__file__) + '/KIKcd_B.20260301.csv', encoding='utf-8') as f:
+    법정동코드표 = [[col for col in row] for row in csv.reader(f)]
 
 
 @dataclass(kw_only=True)
@@ -59,8 +60,7 @@ class 도로명주소:
             row = next(filter(lambda row: row[1] == 법정동주소, 법정동코드표))
             self.법정동코드 = row[0]
         except:
-            # raise ValueError(f'법정동코드를 찾을 수 없습니다. {법정동주소}')
-            pass
+            raise ValueError(f'법정동코드를 찾을 수 없습니다. {법정동주소}')
 
         if self.산여부 == '1':
             self.특수지코드 = '1'
