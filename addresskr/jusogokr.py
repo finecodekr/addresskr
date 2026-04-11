@@ -27,7 +27,8 @@ def search(keyword: str):
                        data={'confmKey': settings.JUSO_GO_KR_API_KEY,
                              'keyword': keyword,
                              'resultType': 'json'},
-                       headers={'Accept-Language': 'ko'}).json()
+                       headers={'Accept-Language': 'ko'},
+                       timeout=5).json()
 
     if res['results']['common']['errorCode'] == '0':
         return res['results']['juso']
